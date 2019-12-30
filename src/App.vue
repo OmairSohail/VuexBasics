@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <productlistone v-bind:products="products"></productlistone>
+    <productlisttwo v-bind:products="products"></productlisttwo>  
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import productlistone from './components/ProductListOne'
+import productlisttwo from './components/ProductListTwo'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+   productlistone,
+   productlisttwo
+  },
+  data(){
+    return{
+      products:[
+        {id:1,name:'Banana',price:20},
+        {id:2,name:'Apple',price:30},
+        {id:3,name:'Pineapple',price:40},
+        {id:4,name:'GreyFruit',price:50},
+        {id:5,name:'Chocolate',price:60},
+        {id:6,name:'Basin',price:70},
+        {id:7,name:'Chips',price:80}
+        
+      ]
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+ font-family: 'Teko', sans-serif;
+ font-size:1.5rem;
 }
 </style>
